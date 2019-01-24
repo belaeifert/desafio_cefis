@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+
+    {% block content %}
+        {% for course in data %}
+        <a class="link" href="{% url 'course_detail' id=course.id %}">
+            <div class="well">
+                <div class="media container">
+                    <img class="pull-left" id="id_banner" src="{{course.banner}}" >
+
+                    <h3 id="id_title">{{ course.title }}</h3>
+                    <h4 id="id_subtitle">{{ course.subtitle }}</h4>
+                    <h5 id="id_teachers_names"> com {{ course.teachers_names }} </h5>
+                    <div class="media-body">
+                        <p id="id_resume"> {{course.resume}}</p>
+                        <!-- <p><a class="btn btn btn-success" href="{% url 'course_detail' id=course.id %}" role="button">Saiba mais!!</a></p> -->
+                    </div>
+                </div>
+            </div>
+         </a>
+        {% endfor %}
+    {% endblock %}

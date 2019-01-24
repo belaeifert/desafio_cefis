@@ -1,0 +1,44 @@
+{% extends 'base.html'%}
+
+    {% block content %}
+        <div class="well">
+            <h1 id="id_title">{{ data.title }}</h1>
+            <h4 id="id_subtitle">{{ data.subtitle }}</h4>
+            <h5 id="id_teachers_names"> com {{ data.teachers_names }} </h5>
+
+            <div>
+                <iframe width="900" height="545"
+                        src="{{ data.video_divulgacao}}">
+                </iframe>
+            </div>
+            <br/>
+        </div>
+
+        <div class="well">
+            <h3> Conheça o curso </h3>
+            <div class="media container">
+                    <img class="pull-left" id="id_banner" src="{{data.banner}}" >
+                <div class="media-body">
+                    <p id="id_title_descricao"> <b>Título: </b>{{ data.title }}</p>
+                    <p id="id_subtitle_descricao"> <b> Subtítulo: </b>{{ data.subtitle }}</p>
+                    <p id="id_teachers_names_descricao"> <b> Professor(es): </b> {{ data.teachers_names }} </p>
+                    <p id="id_resume"> <b> Sobre o curso: </b> {{data.resume}}</p>
+                    <p id="id_carga_horario"> <b>Carga Horária:</b> {{data.hours}}</p>
+                </div>
+            </div>
+            <br />
+            {% if data.classes %}
+            <h3> Aulas </h3>
+            <ol>
+                {% for class in data.classes %}
+                <div class="classesnames">
+                    <li> <p id="id_title_class"> {{class.title}} </p> </li>
+                </div>
+                {% endfor %}
+            </ol>
+            {% else %}
+            <h3> Não há aulas disponíveis para este curso </h3>
+            {% endif %}
+        </div>
+
+    {% endblock %}

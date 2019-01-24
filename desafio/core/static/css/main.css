@@ -1,0 +1,34 @@
+.link {
+   color: black;
+   display:block
+   text-decoration: none
+}
+
+.classesnames {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  color: inherit;
+  background-color: #eee;
+  border: 2px solid #eee;
+  border-radius: 5px;
+  font-size: 21px;
+  font-weight: 200;
+}
+
+.container img {
+    max-width:320px;
+    max-height:180px;
+    min-width:320px;
+    min-height:180px;
+    width: auto;
+    height: auto;
+}
+
+.container p{
+   padding-right: 10%;
+}
+
+.container h3{
+   padding-right: 10%;
+}
